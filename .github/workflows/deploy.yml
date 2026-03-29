@@ -1,0 +1,29 @@
+name: Deploy blog to Jugomesh
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Sync blog posts from repo to Malla blog directory
+            cd /opt/malla-staging/blog-repo || git clone git@github.com:LudiSistemas/jugomesh-blog.git /opt/malla-staging/blog-repo
+            cd /opt/malla-staging/blog-repo && git pull origin main
+
+            # Copy all markdown files from categories to Malla blog posts dir
+            BLOG_DIR="/opt/malla-staging/app/src/malla/blog/posts"
+            rm -f "$BLOG_DIR"/*.md
+            find /opt/malla-staging/blog-repo -name "*.md" -not -name "README.md" -exec cp {} "$BLOG_DIR/" \;
+
+            echo "Deployed $(ls "$BLOG_DIR"/*.md 2>/dev/null | wc -l) blog posts"
