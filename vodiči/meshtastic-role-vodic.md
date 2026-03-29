@@ -1,9 +1,7 @@
----
-title: Meshtastic role — Koji tip čvora si ti?
-date: 2026-03-29
-author: LudiSistemas
-summary: Kompletni vodič kroz sve Meshtastic role — od CLIENT-a do ROUTER-a. Objašnjeno jednostavno, sa primerima iz prakse.
-icon: bi-router
+# Meshtastic role — Koji tip čvora si ti?
+
+Kompletni vodič kroz sve Meshtastic role — od CLIENT-a do ROUTER-a. Objašnjeno jednostavno, sa primerima iz prakse.
+
 ---
 
 ## Šta su role i zašto su bitne?
@@ -13,7 +11,7 @@ Svaki Meshtastic uređaj ima **rolu** — to je kao "posao" koji tvoj uređaj ob
 - Da li tvoj uređaj **prosleđuje tuđe poruke** ili samo prima/šalje svoje
 - Koliko **struje troši** (bitno za baterijsko napajanje)
 - Da li je **vidljiv** ostalim korisnicima u mreži
-- Koliko **brzo reaguje** na prosledjivanje paketa
+- Koliko **brzo reaguje** na prosleđivanje paketa
 
 Pogrešna rola može da uguši mrežu ili da ti brzo potroši bateriju. Evo vodiča za svaku.
 
@@ -26,13 +24,13 @@ Pogrešna rola može da uguši mrežu ili da ti brzo potroši bateriju. Evo vodi
 **Šta radi:**
 - Prima i šalje tvoje poruke
 - Prosleđuje tuđe poruke, ali **samo ako niko drugi već nije prosledio**
-- Ako čuje da je drugi nod već prosl edio paket, odustaje od prosleđivanja
+- Ako čuje da je drugi nod već prosledio paket, odustaje od prosleđivanja
 
 **Potrošnja:** Srednja — radio se povremeno pali
 
 **Kada koristiti:**
 - Imaš telefon povezan sa uređajem
-- Čitaš poruke, gledaš mapu, šalješ tekstove
+- Čitaš poruke, gledaš mapu, šalješ poruke
 - Većina korisnika treba da bude na ovoj roli
 
 > 💡 **Ako si početnik — izaberi CLIENT.** Ovo je podrazumevana rola i radi savršeno za 90% korisnika.
@@ -55,7 +53,7 @@ Pogrešna rola može da uguši mrežu ili da ti brzo potroši bateriju. Evo vodi
 - Želiš da pratiš mrežu bez generisanja saobraćaja
 - Imaš više uređaja na istoj lokaciji (samo jedan treba da prosleđuje)
 
-> ⚠️ **Pazi:** Mreža neće koristiti tvoj uređaj za prosleđivanje. Ako si jedini u nekom delu mreže, poruke neće prolaziti kroz tebe.
+> ⚠️ **Pažnja:** Poruke neće biti prosleđivane kroz tvoj uređaj, što će smanjiti domet mreže u tvom delu.
 
 ---
 
@@ -83,7 +81,7 @@ Pogrešna rola može da uguši mrežu ili da ti brzo potroši bateriju. Evo vodi
 **Šta radi:**
 - Za **favorizovane čvorove** — ponaša se kao ROUTER (uvek prosleđuje)
 - Za ostale čvorove — ponaša se kao obični CLIENT
-- Ne troši hop budget kada prosleđuje između favorizovanih rutera
+- Ne troši hop budžet kada prosleđuje između favorizovanih rutera
 
 **Potrošnja:** Srednja do visoka
 
@@ -92,7 +90,7 @@ Pogrešna rola može da uguši mrežu ili da ti brzo potroši bateriju. Evo vodi
 - Želiš da garantuješ dobar signal za tvoje uređaje (npr. tracker u autu)
 - Imaš više svojih čvorova i želiš da ih povežeš
 
-> 💡 **Primer:** Imaš fiksnu antenu na krovu i mobilni tracker u kolima. Stavi krovnu stanicu na CLIENT_BASE i dodaj tracker kao favorit — uvek će prosl editi njegove pakete sa prioritetom.
+> 💡 **Primer:** Imaš fiksnu antenu na krovu i mobilni tracker u kolima. Stavi krovnu stanicu na CLIENT_BASE i dodaj tracker kao favorit — uvek će proslediti njegove pakete sa prioritetom.
 
 ---
 
@@ -104,7 +102,7 @@ Pogrešna rola može da uguši mrežu ili da ti brzo potroši bateriju. Evo vodi
 - **Uvek prosleđuje** svaki paket koji primi — nikad ne odustaje
 - Prosleđuje **pre svih ostalih** (najkraći delay)
 - WiFi i ekran se automatski isključuju za uštedu
-- Ne troši hop budget između favorizovanih rutera
+- Ne troši hop budžet između favorizovanih rutera
 
 **Potrošnja:** Srednja (radio aktivan, sve ostalo ugašeno)
 
@@ -133,8 +131,7 @@ Pogrešna rola može da uguši mrežu ili da ti brzo potroši bateriju. Evo vodi
 
 **Kada koristiti:**
 - Imaš čvor na dobroj lokaciji ali ne želiš da dominira mrežom
-- Želiš backup prosleđivanje — ako primarni ruteri ne proslede, tvoj će
-- Imaš MQTT gateway koji treba da prosleđuje ali ne da bude primarni ruter
+- Želiš backup prosleđivanje — ako primarni ruteri ne proslede, tvoj će! Ili imaš MQTT gateway koji treba da prosleđuje ali ne da bude primarni ruter
 
 > 💡 **Jugomesh savet:** Naši MQTT gejtvejevi (Paxy, Knez Mihailova) koriste ROUTER_LATE — prosleđuju pakete ali daju prednost pravim ROUTER čvorovima na planinama.
 
@@ -230,7 +227,7 @@ Pogrešna rola može da uguši mrežu ili da ti brzo potroši bateriju. Evo vodi
 
 **Kada koristiti:**
 - Stavio si uređaj na nešto vredno (dron, bicikl, oprema)
-- Ako se izgubi, mrežaće objaviti lokaciju
+- Ako se izgubi, mreža će objaviti lokaciju
 
 ---
 
