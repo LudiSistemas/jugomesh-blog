@@ -9,7 +9,7 @@ Direktorijumi su kategorije:
 ```
 vodiči/          — Vodiči i tutorijali za Meshtastic
 vesti/           — Vesti iz mreže
-tehničko/        — Tehnički članci
+tehnika/        — Tehnički članci
 ```
 
 ## Format članaka
