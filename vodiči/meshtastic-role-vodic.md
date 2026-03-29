@@ -1,4 +1,4 @@
-# Meshtastic role — Koji tip čvora si ti?
+# Meshtastic role — Koji tip čvora je najbolji za tebe?
 
 Kompletni vodič kroz sve Meshtastic role — od CLIENT-a do ROUTER-a. Objašnjeno jednostavno, sa primerima iz prakse.
 
