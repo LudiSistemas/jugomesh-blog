@@ -8,39 +8,44 @@ Direktorijumi su kategorije:
 
 ```
 vodiči/          — Vodiči i tutorijali za Meshtastic
-vesti/           — Vesti iz mreže
-tehnika/        — Tehnički članci
+vesti/           — Vesti sa mreže
+tehnika/         — Tehnički članci
 ```
 
 ## Format članaka
 
-Svaki članak je Markdown fajl sa YAML headerom:
+Svaki članak je **čist Markdown fajl**. Metadata se automatski čita:
+
+- **Naslov** — iz prvog `# Naslov` u fajlu
+- **Autor** — iz git historije (ko je commitovao fajl)
+- **Datum** — iz git historije (kad je fajl prvi put dodat)
+- **Opis** — iz prvog paragrafa posle naslova
 
 ```markdown
----
-title: Naslov članka
-date: 2026-03-29
-author: github-username
-summary: Kratak opis za listu članaka.
-icon: bi-router
----
+# Naslov članka
 
-Sadržaj članka u Markdown formatu...
+Kratak opis koji se prikazuje na listi članaka.
+
+## Prvi podnaslov
+
+Sadržaj članka...
 ```
 
-Polje `author` je GitHub korisničko ime — na sajtu se prikazuje kao link na GitHub profil autora.
-
-Ikone: bilo koja [Bootstrap Icons](https://icons.getbootstrap.com/) klasa.
+URL članka je naziv fajla bez `.md` ekstenzije: `vodiči/moj-clanak.md` → `jugomesh.com/blog/moj-clanak`
 
 ## Kako doprineti
 
-1. Fork ovaj repo
+1. Forkuj ovaj repo
 2. Dodaj novi `.md` fajl u odgovarajuću kategoriju
 3. Otvori Pull Request
 4. Posle merge-a na `main`, članak se automatski objavljuje na sajtu
 
+## Deploy
+
+Automatski preko GitHub Actions — svaki push na `main` sinhronizuje sadržaj na server. Nije potrebna nikakva dodatna konfiguracija za autore.
+
 ## Pravila
 
-- Članci moraju biti na srpskom jeziku
-- YAML header je obavezan (title, date, author, summary)
-- Slike se mogu linkati eksterno
+- Članci moraju biti na Srpskom jeziku
+- Naziv fajla koristi samo ASCII karaktere i crtice (`moj-clanak.md`)
+- Jedan `# Naslov` na vrhu fajla je obavezan
