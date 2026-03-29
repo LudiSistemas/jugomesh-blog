@@ -1,0 +1,59 @@
+name: Validacija članaka
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Proveri članke
+        run: |
+          errors=0
+
+          for file in $(find . -name "*.md" -not -name "README.md" -not -path "./.github/*"); do
+            echo "Proveravam: $file"
+
+            # 1. Mora imati # Naslov
+            if ! grep -q '^# ' "$file"; then
+              echo "  ❌ Nedostaje naslov (# Naslov) u $file"
+              errors=$((errors + 1))
+            else
+              title=$(grep -m1 '^# ' "$file" | sed 's/^# //')
+              echo "  ✅ Naslov: $title"
+            fi
+
+            # 2. Mora biti u kategoriji (poddirektorijumu)
+            dir=$(dirname "$file")
+            if [ "$dir" = "." ]; then
+              echo "  ❌ Članak mora biti u kategoriji (vodiči/, vesti/, tehnika/)"
+              errors=$((errors + 1))
+            else
+              echo "  ✅ Kategorija: $dir"
+            fi
+
+            # 3. Naziv fajla - samo ASCII i crtice
+            basename=$(basename "$file")
+            if echo "$basename" | grep -qP '[^a-z0-9\-\.]'; then
+              echo "  ⚠️  Naziv fajla ima nedozvoljene karaktere: $basename (koristiti samo mala slova, brojeve i crtice)"
+            fi
+
+            # 4. Mora imati barem jedan paragraf posle naslova (summary)
+            lines=$(grep -c '.' "$file")
+            if [ "$lines" -lt 5 ]; then
+              echo "  ❌ Članak je prekratak (min 5 linija)"
+              errors=$((errors + 1))
+            fi
+
+            echo ""
+          done
+
+          if [ $errors -gt 0 ]; then
+            echo "❌ Pronađeno $errors grešaka"
+            exit 1
+          else
+            echo "✅ Svi članci su ispravni"
+          fi
