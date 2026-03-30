@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="background:linear-gradient(180deg,#0a1628 0%,#112240 100%);">
+  <rect x="320" y="20" width="160" height="40" rx="20" fill="#00d2ff" fill-opacity="0.2" stroke="#00d2ff" stroke-width="2"/>
+  <text x="400" y="45" text-anchor="middle" fill="#00d2ff" font-size="12" font-weight="bold">Sta je cilj?</text>
+  <!-- Branch 1: Infrastructure -->
+  <line x1="340" y1="60" x2="150" y2="100" stroke="#00d2ff" stroke-width="1.5" opacity="0.5"/>
+  <rect x="60" y="100" width="180" height="36" rx="6" fill="#1a2d4a" stroke="#00d2ff" stroke-width="1"/>
+  <text x="150" y="123" text-anchor="middle" fill="#e0e0e0" font-size="10">Infrastruktura mreze</text>
+  <line x1="150" y1="136" x2="150" y2="170" stroke="#00d2ff" stroke-width="1" opacity="0.4"/>
+  <rect x="70" y="170" width="160" height="30" rx="6" fill="#1a2d4a" stroke="#445" stroke-width="1"/>
+  <text x="150" y="190" text-anchor="middle" fill="#c0c0c0" font-size="9">Stalna struja?</text>
+  <line x1="110" y1="200" x2="80" y2="240" stroke="#4ade80" stroke-width="1" opacity="0.5"/>
+  <text x="90" y="225" text-anchor="middle" fill="#4ade80" font-size="8">DA</text>
+  <rect x="30" y="240" width="100" height="35" rx="6" fill="#00d2ff" fill-opacity="0.15" stroke="#00d2ff" stroke-width="1.5"/>
+  <text x="80" y="262" text-anchor="middle" fill="#00d2ff" font-size="11" font-weight="bold">ROUTER</text>
+  <line x1="190" y1="200" x2="220" y2="240" stroke="#f87171" stroke-width="1" opacity="0.5"/>
+  <text x="210" y="225" text-anchor="middle" fill="#f87171" font-size="8">NE</text>
+  <rect x="160" y="240" width="120" height="35" rx="6" fill="#a78bfa" fill-opacity="0.15" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="220" y="256" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="bold">ROUTER_LATE</text>
+  <text x="220" y="270" text-anchor="middle" fill="#a78bfa" font-size="7">(backup)</text>
+  <!-- Branch 2: Tracking -->
+  <line x1="400" y1="60" x2="400" y2="100" stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+  <rect x="320" y="100" width="160" height="36" rx="6" fill="#1a2d4a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="400" y="123" text-anchor="middle" fill="#e0e0e0" font-size="10">Pracenje / Senzori</text>
+  <line x1="400" y1="136" x2="400" y2="170" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+  <rect x="315" y="170" width="170" height="30" rx="6" fill="#1a2d4a" stroke="#445" stroke-width="1"/>
+  <text x="400" y="190" text-anchor="middle" fill="#c0c0c0" font-size="9">GPS pozicija ili telemetrija?</text>
+  <line x1="360" y1="200" x2="330" y2="240" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+  <text x="335" y="225" text-anchor="middle" fill="#f59e0b" font-size="8">GPS</text>
+  <rect x="290" y="240" width="100" height="35" rx="6" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="340" y="262" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="bold">TRACKER</text>
+  <line x1="440" y1="200" x2="470" y2="240" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+  <text x="465" y="225" text-anchor="middle" fill="#f59e0b" font-size="8">Telem.</text>
+  <rect x="420" y="240" width="100" height="35" rx="6" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="470" y="262" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="bold">SENSOR</text>
+  <!-- Branch 3: Communication -->
+  <line x1="460" y1="60" x2="650" y2="100" stroke="#4ade80" stroke-width="1.5" opacity="0.5"/>
+  <rect x="570" y="100" width="160" height="36" rx="6" fill="#1a2d4a" stroke="#4ade80" stroke-width="1"/>
+  <text x="650" y="123" text-anchor="middle" fill="#e0e0e0" font-size="10">Komunikacija</text>
+  <line x1="650" y1="136" x2="650" y2="170" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
+  <rect x="565" y="170" width="170" height="30" rx="6" fill="#1a2d4a" stroke="#445" stroke-width="1"/>
+  <text x="650" y="190" text-anchor="middle" fill="#c0c0c0" font-size="9">Puno cvorova u blizini?</text>
+  <line x1="610" y1="200" x2="580" y2="240" stroke="#f87171" stroke-width="1" opacity="0.5"/>
+  <text x="585" y="225" text-anchor="middle" fill="#f87171" font-size="8">DA</text>
+  <rect x="520" y="240" width="120" height="35" rx="6" fill="#f87171" fill-opacity="0.15" stroke="#f87171" stroke-width="1.5"/>
+  <text x="580" y="256" text-anchor="middle" fill="#f87171" font-size="10" font-weight="bold">CLIENT_MUTE</text>
+  <text x="580" y="270" text-anchor="middle" fill="#f87171" font-size="7">(ne zagusuj)</text>
+  <line x1="690" y1="200" x2="720" y2="240" stroke="#4ade80" stroke-width="1" opacity="0.5"/>
+  <text x="715" y="225" text-anchor="middle" fill="#4ade80" font-size="8">NE</text>
+  <rect x="670" y="240" width="100" height="35" rx="6" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="720" y="262" text-anchor="middle" fill="#4ade80" font-size="11" font-weight="bold">CLIENT</text>
+  <!-- Summary box -->
+  <rect x="100" y="310" width="600" height="80" rx="10" fill="rgba(0,210,255,0.03)" stroke="rgba(0,210,255,0.15)" stroke-width="1"/>
+  <text x="400" y="335" text-anchor="middle" fill="#00d2ff" font-size="11" font-weight="bold">Zlatna pravila</text>
+  <text x="400" y="358" text-anchor="middle" fill="#c0c0c0" font-size="10">Pocni sa CLIENT — prebaci tek kad vidis potrebu</text>
+  <text x="400" y="375" text-anchor="middle" fill="#c0c0c0" font-size="10">ROUTER samo na stalnoj struji i dobroj lokaciji</text>
+  <text x="400" y="392" text-anchor="middle" fill="#c0c0c0" font-size="10">Vise ljudi = vise CLIENT_MUTE, manje ROUTER-a</text>
+  <text x="400" y="460" text-anchor="middle" fill="#556" font-size="9">Detaljan opis svake role: jugomesh.com/blog/meshtastic-role-vodic</text>
+</svg>
